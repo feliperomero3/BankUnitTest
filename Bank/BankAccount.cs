@@ -7,9 +7,9 @@ namespace BankAccountNS
     /// </summary> 
     public class BankAccount
     {
-        private string m_customerName;
-        private double m_balance;
-        private bool m_frozen = false;
+        private string _customerName;
+        private double _balance;
+        private bool _frozen;
 
         public const string DebitAmountExceedsBalanceMessage = "Debit amount exceeds balance";
         public const string DebitAmountLessThanZeroMessage = "Debit amount less than zero";
@@ -20,28 +20,28 @@ namespace BankAccountNS
 
         public BankAccount(string customerName, double balance)
         {
-            m_customerName = customerName;
-            m_balance = balance;
+            _customerName = customerName;
+            _balance = balance;
         }
 
         public string CustomerName
         {
-            get { return m_customerName; }
+            get { return _customerName; }
         }
 
         public double Balance
         {
-            get { return m_balance; }
+            get { return _balance; }
         }
 
         public void Debit(double amount)
         {
-            if (m_frozen)
+            if (_frozen)
             {
                 throw new Exception("Account frozen");
             }
 
-            if (amount > m_balance)
+            if (amount > _balance)
             {
                 throw new ArgumentOutOfRangeException("amount", amount, 
                     DebitAmountExceedsBalanceMessage);
@@ -53,12 +53,12 @@ namespace BankAccountNS
                     DebitAmountLessThanZeroMessage);
             }
 
-            m_balance -= amount;
+            _balance -= amount;
         }
 
         public void Credit(double amount)
         {
-            if (m_frozen)
+            if (_frozen)
             {
                 throw new Exception("Account frozen");
             }
@@ -68,17 +68,17 @@ namespace BankAccountNS
                 throw new ArgumentOutOfRangeException("amount");
             }
 
-            m_balance += amount;
+            _balance += amount;
         }
 
         private void FreezeAccount()
         {
-            m_frozen = true;
+            _frozen = true;
         }
 
         private void UnfreezeAccount()
         {
-            m_frozen = false;
+            _frozen = false;
         }
 
         public static void Main()
@@ -87,8 +87,8 @@ namespace BankAccountNS
 
             ba.Credit(5.77);
             ba.Debit(11.22);
+
             Console.WriteLine("Current balance is ${0}", ba.Balance);
         }
-
     }
 }
