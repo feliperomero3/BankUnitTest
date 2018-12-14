@@ -1,5 +1,5 @@
 ﻿using System;
-using BankAccountNS;
+using Bank;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BanksTests

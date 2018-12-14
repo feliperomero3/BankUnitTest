@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BankAccountNS
+namespace Bank
 {
     /// <summary> 
     /// Bank Account demo class. 
