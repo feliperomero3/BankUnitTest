@@ -1,8 +1,7 @@
 ﻿using System;
-using Bank;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BanksTests
+namespace Bank.Tests
 {
     [TestClass]
     public class BankAccountTests
