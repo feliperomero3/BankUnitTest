@@ -14,7 +14,7 @@ namespace BanksTests
             // arrange
             double beginningBalance = 11.99;
             double debitAmount = 4.55;
-            double expected = 7.44; // beginningBalance - debbitAmount
+            double expected = 7.44; // beginningBalance - debitAmount
             BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
 
             // act
@@ -59,8 +59,9 @@ namespace BanksTests
             {
                 // assert
                 StringAssert.Contains(e.Message, BankAccount.DebitAmountExceedsBalanceMessage);
-                return;
+                //return;
             }
+
             Assert.Fail("No exception was thrown");
         }
     }
