@@ -43,6 +43,7 @@ namespace BanksTests
 
         // unit test code
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Debit_WhenAmountIsMoreThanBalance_ShouldThrowArgumentOutOfRange()
         {
             // arrange
@@ -51,17 +52,10 @@ namespace BanksTests
             BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
 
             // act
-            try
-            {
-                account.Debit(debitAmount);
-            }
-            catch (ArgumentOutOfRangeException e)
-            {
-                // assert
-                StringAssert.Contains(e.Message, BankAccount.DebitAmountExceedsBalanceMessage);
-                //return;
-            }
+            account.Debit(debitAmount);
 
+            // assert is handled by ExpectedException
+            // if not, this unit test will fail
             Assert.Fail("No exception was thrown");
         }
     }
