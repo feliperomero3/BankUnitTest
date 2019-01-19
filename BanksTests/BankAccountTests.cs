@@ -39,6 +39,8 @@ namespace BanksTests
             account.Debit(debitAmount);
 
             // assert is handled by ExpectedException
+            // if not, this unit test will fail
+            Assert.Fail("No exception was thrown");
         }
 
         // unit test code
