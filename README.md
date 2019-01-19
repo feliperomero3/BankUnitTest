@@ -1,7 +1,8 @@
-# Introducción a Pruebas Unitarias en C#
+ï»¿# IntroducciÃ³n a Pruebas Unitarias en C#
 
-Solución que contiene proyecto de aplicación en consola de windows y
-proyecto de prueba unitaria.
+SoluciÃ³n que contiene proyecto de biblioteca de clases (dll) y proyecto de prueba unitaria.
+
+Ligeramente basado en el proyecto _My Bank_ utilizado en [Microsoft Docs](https://docs.microsoft.com)
 
 ## Requisitos
 
